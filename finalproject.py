@@ -14,7 +14,7 @@ def sun_efficency():
             y = 1
         return y
 
-def wind_effiency():
+def wind_efficency():
     print("Input the average wind speed (km/h): ")
     wind_speed = input()
     if wind_speed != float():
@@ -28,6 +28,21 @@ def wind_effiency():
         return x
 
 def final_calculations():
-    wind_effiency = wind_effiency()
-    sun_effiency = sun_effiency()
+    final_wind_effiency = wind_efficency()
+    final_sun_effiency = sun_efficency()
     print("Type the amount of money you have available (USD, Millions): ")
+    money = input()
+    if final_wind_effiency > 5 and final_sun_effiency > 5:
+        print("Solar + Wind")
+    elif final_sun_effiency > 5:
+        print("Solar")
+    elif final_wind_effiency > 5:
+        print("Wind")
+    elif money > INPUT_HERE:
+        ## This is for how much money is required to build nuclear
+        print("Nuclear")
+    else:
+        print("No solution available")
+    return
+
+print(final_calculations())
